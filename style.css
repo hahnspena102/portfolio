@@ -1,0 +1,106 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --text-color: #ffffff;
+    --background-color: #29272F;
+    --navbar-color: #6C6471;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    background: var(--background-color);
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: "Red Hat Text", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    align-items: center; 
+    display: flex; 
+    flex-direction: column;
+    height: 100vh;
+}
+
+img {
+    max-width: 60%;
+}
+
+#header {
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+#footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+
+#about-me {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;         
+    width: 80%;                      
+}
+
+#about-me > * {
+    flex: 1;                        
+    margin: 0 10px;                
+}
+
+#navbar {
+    background: var(--navbar-color);
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#navbar p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}

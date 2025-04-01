@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio of John Doe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      function loadHTML(elementId, fileName) {
+        fetch(fileName)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(elementId).innerHTML = data;
+          })
+          .catch((error) => {
+            console.error('Error loading the HTML file:', error);
+          });
+      }
+
+
+      window.onload = function () {
+        loadHTML('header', 'header.html');
+        loadHTML('footer', 'footer.html');
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <h2 style="text-align: center">Projects</h2>
+
+    <div class="projects-grid">
+      <a href="projects/breadquest2.html" class="project-card">
+        <img src="../assets/images/breadquest2.jpeg" alt="BreadQuest2" />
+        <h2>BreadQuest II: Into the Oven</h2>
+      </a>
+      <a href="projects/project2.html" class="project-card">
+        <img src="../assets/images/project2.png" alt="Project 2" />
+        <h2>Project 2</h2>
+      </a>
+    </div>
+
+    <div id="footer"></div>
+  </body>
+</html>

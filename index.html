@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hahns Pena</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      function loadHTML(elementId, fileName) {
+        fetch(fileName)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(elementId).innerHTML = data;
+          })
+          .catch((error) => {
+            console.error('Error loading the HTML file:', error);
+          });
+      }
+
+
+      window.onload = function () {
+        loadHTML('header', 'header.html');
+        loadHTML('footer', 'footer.html');
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <div id="about-me">
+        <div>
+            <h1>Hahns Peña</h1>
+            <p>Hello!</p>
+        </div>
+        <div>
+            <img id="portrait-img" src="../assets/images/portrait.png" alt="Project 2" />
+        </div>
+    </div>
+    
+    <div id="footer"></div>
+  </body>
+</html>
