@@ -3,7 +3,9 @@
     --secondary-color: #2ecc71;
     --accent-color: #e74c3c;
     --text-color: #ffffff;
+    --text-color-2: rgb(231, 231, 189);
     --background-color: #29272F;
+    --background-color-2: #1d1c21;
     --navbar-color: #6C6471;
 }
 
@@ -30,7 +32,38 @@ body {
 }
 
 img {
-    max-width: 60%;
+    max-width: 100%;
+    height: auto;
+    max-width: 50%;
+    object-fit: contain;
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 3rem; 
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 2rem; 
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0;
+}
+
+p {
+    color: var(--text-color);
+    font-size: 1rem; /* or whatever size you want */
+    font-weight: normal;  /* adjust weight to match */
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+figcaption {
+    color: var(--text-color-2);
 }
 
 #header {
@@ -45,17 +78,47 @@ img {
     color: white;
 }
 
+#intro,#about-me {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
 #about-me {
+    background-color: var(--background-color-2);
+    text-align: center;
+}
+
+#about-me-img {
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
+    height: auto;
+    gap: 10px;
+    object-fit: cover;
+}
+
+#content {
     display: flex;
     justify-content: space-between;  
     align-items: center;         
-    width: 80%;                      
+    width: 60%;                      
 }
 
-#about-me > * {
+#content > * {
     flex: 1;                        
     margin: 0 10px;                
+}
+
+.text-image-pair {
+  display: flex;
+  align-items: center;
+  gap: 30px; 
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 #navbar {
@@ -76,6 +139,28 @@ img {
     margin: 0;
     font-size: 18px;
 }
+
+#navbar a {
+  color: inherit;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  text-decoration: underline;
+  color: var(--text-color-2)
+}
+
+.social-icons a {
+  color: inherit;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: var(--text-color-2)
+}
+
 
 .projects-grid {
     display: grid;
