@@ -220,6 +220,7 @@ figcaption {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    padding-bottom: 0.5rem;
     gap: 1rem;
     flex-wrap: wrap; /* Allow wrapping on small screens */
     background-color: var(--background-color); /* Optional */
@@ -227,7 +228,7 @@ figcaption {
 
 .icon-button {
     position: absolute;
-    left: 1rem;
+    left: 2rem;
     font-size: 1.8rem;
     color: var(--text-color);
     text-decoration: none;
@@ -262,3 +263,11 @@ iframe {
     background-color: var(--button-color-highlight);
 }
 
+.learned-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px;
+    max-width: 100%;
+    margin: auto;
+}
