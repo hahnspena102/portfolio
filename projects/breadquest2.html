@@ -1,23 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hahns Pena</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet"
+        />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script>
+        function loadHTML(elementId, fileName) {
+            fetch(fileName)
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById(elementId).innerHTML = data;
+            })
+            .catch((error) => {
+                console.error('Error loading the HTML file:', error);
+            });
+        }
 
-    <div id="navbar">
-        <h1>BreadQuest II: Into the Oven</h1>
-        <a href="../index.html">Back to Projects</a>
-    </div>
 
-    <div class="project-details">
-        <h2>Project 1 Title</h2>
-        <img src="../assets/images/breadquest2.jpeg" alt="BQ2">
-        <p>Description of the project goes here.</p>
-    </div>
+        window.onload = function () {
+            loadHTML('header', '../header.html');
+            loadHTML('footer', '../footer.html');
+        };
+        </script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div class="project-header">
+            <a href="../projects.html" class="icon-button" title="Back to Projects">
+                <span class="material-icons">arrow_back</span>
+            </a>
+            <div>
+                <h1 style="text-align: center">BreadQuest II: Into the Oven</h1>
+            </div>
+        </div>
+        <div class="project-intro">
+            <div class="content">
+                <p>BreadQuest II: Into the Oven is a web-based top-down dungeon crawler video game focused on thoughtful decision-making and skillful maneuvering. </p>
+                <iframe src="https://www.youtube.com/embed/v6wxAb0wmJs?si=q4Y9WvqjrDrhKpXL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a href="https://hahnspena102.itch.io/breadquest-ii-into-the-oven" class="play-now">Play Now!</a>
+            </div>
+        </div>
+        <div class="project-details-1">
+            <div class="content">
+                <p>Join Sir Gluten, a brave bread knight, on his perilous quest to save the villagers of Dough Village from their doom!  In order to rescue his people, Sir Gluten traverses the depths of a dungeon where he encounters a cast of dangerous, medley of dessert/sweet treat-themed enemies. The deeper and deeper he journeys, the more he questions the dungeon. Why are there so many monsters? Why are they working together? What do they want with the villagers? Beat the game to uncover the mystery.</p>
+                <img src="../assets/images/breadquest2.jpeg" alt="BreadQuest2" />
+            </div>
+        </div>
+        <div class="project-details-2">
+            <div class="content">
+                <h2>Technical Contributions</h2>
+                <div class="contribution">
+                    <h3>Enemies & Items</h3>
+                    <p>
+                    Designed using <strong>ScriptableObjects</strong> and a modular inheritance system.
+                    A parent <code>Enemy</code> class enabled child enemies to share core functionality
+                    while allowing easy tuning of stats like health, damage, and movement via data-driven design.
+                    </p>
+                </div>
 
-</body>
+                <div class="contribution">
+                    <h3>Inventory System</h3>
+                    <p>
+                    Built a persistent inventory system to maintain weapons, coins, and level progress across scenes.
+                    Each weapon had custom properties (damage, animation, fire style), which made system-wide persistence
+                    and flexibility challenging but rewarding.
+                    </p>
+                </div>
+
+                <div class="contribution">
+                    <h3>Boss Battle (OVN-9000)</h3>
+                    <p>
+                    Implemented using a simple <strong>Finite State Machine</strong> to manage five distinct attack states
+                    and phase-based unlocks. This made the behavior logic structured but complex due to OVN’s variety of attacks.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="project-details-1">
+            <div class="content">
+                <h2>Tools</h2>
+                <p><b>Unity</b> - chosen due to our prior experience with the engine, which helped streamline collaboration</p>
+                <p><b>Aseprite</b> -  creating and animating 2D pixel art assets such as characters, weapons, and UI elements. </p>
+                <p><b>Git & GitHub</b> - version control and collaboration. Enabled smooth team workflow with branch management, pull requests, and issue tracking.</p>
+                <p><b>Visual Studio Code</b> - primary code editor for C# scripting within Unity, supporting debugging and integration with Unity's tools.</p>
+            </div>
+        </div>
+        <div class="project-details-2">
+            <div class="content">
+                <img src="../assets/images/glutenattack.gif" alt="BreadQuest2" />
+                <p>This project would not have been possible without my fellow BreadQuestDevs, Winston Untung and Camila Yeremin! Much love to my teammates! ♡</p>
+            </div>
+        </div>
+        <div id="footer"></div>
+
+
+    </body>
 </html>

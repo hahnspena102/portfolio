@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio of John Doe</title>
+    <title>Hahns Pena</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script>
       function loadHTML(elementId, fileName) {
         fetch(fileName)
@@ -33,18 +34,34 @@
 
   <body>
     <div id="header"></div>
+    <div class="projects-page">
+      <h1 style="text-align: center">Projects</h1>
 
-    <h2 style="text-align: center">Projects</h2>
-
-    <div class="projects-grid">
-      <a href="projects/breadquest2.html" class="project-card">
-        <img src="../assets/images/breadquest2.jpeg" alt="BreadQuest2" />
-        <h2>BreadQuest II: Into the Oven</h2>
-      </a>
-      <a href="projects/project2.html" class="project-card">
-        <img src="../assets/images/project2.png" alt="Project 2" />
-        <h2>Project 2</h2>
-      </a>
+      <div class="projects-grid">
+        <a href="projects/breadquest2.html" class="project-card">
+          <img src="../assets/images/breadquest2.jpeg" alt="BreadQuest2" />
+          <h3>BreadQuest II</h3>
+          <div class="project-subtitle">Web-based top-down dungeon crawler video game.</div>
+        </a>
+        <a href="projects/project2.html" class="project-card">
+          <img src="../assets/images/songsmith-icon.png" alt="Songsmith" />
+          <h3>Songsmith</h3>
+          <div class="project-subtitle">Social media platform for music lovers to create, review, and share playlists.</div>
+        </a>
+        <a href="projects/project2.html" class="project-card">
+          <img src="../assets/images/lumi.png" alt="Lumi" />
+          <h2>Lumi</h2>
+          <div class="project-subtitle">Prototype designed at CampPolyHacks 2023 to foster inclusivity and emotional support.</div>
+        </a>
+        <a href="projects/project2.html" class="project-card">
+          <img src="../assets/images/project2.png" alt="Project 2" />
+          <h2>Project 2</h2>
+        </a>
+        <a href="projects/project2.html" class="project-card">
+          <img src="../assets/images/project2.png" alt="Project 2" />
+          <h2>Project 2</h2>
+        </a>
+      </div>
     </div>
 
     <div id="footer"></div>

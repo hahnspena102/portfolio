@@ -1,12 +1,14 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --accent-color: #e74c3c;
+    --button-color: #ffc445;
+    --button-color-highlight: #d3954e;
     --text-color: #ffffff;
     --text-color-2: rgb(231, 231, 189);
+    --text-color-3: rgb(190, 190, 186);
     --background-color: #29272F;
     --background-color-2: #1d1c21;
     --navbar-color: #6C6471;
+    --footer-color: #5a555c;
+    --card-bg: rgba(108, 100, 113,0.5);
 }
 
 
@@ -54,8 +56,16 @@ h2 {
     margin: 0;
 }
 
-p {
+h3 {
     color: var(--text-color);
+    font-size: 1.5rem; 
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0;
+}
+
+p {
+    color: var(--text-color-3);
     font-size: 1rem; /* or whatever size you want */
     font-weight: normal;  /* adjust weight to match */
     line-height: 1.4;
@@ -74,11 +84,13 @@ figcaption {
 
 #footer {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     color: white;
+    width:100%;
+    background-color: var(--footer-color);
 }
 
-#intro,#about-me {
+.intro, .about-me, .project-intro, .project-details-1, .project-details-2 {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -88,12 +100,15 @@ figcaption {
   padding-bottom: 40px;
 }
 
-#about-me {
+.project-intro {
+    padding-top: 0px;
+}
+.about-me, .project-details-1 {
     background-color: var(--background-color-2);
     text-align: center;
 }
 
-#about-me-img {
+.about-me-img {
     aspect-ratio: 4 / 3;
     max-width: 100%;
     height: auto;
@@ -101,27 +116,31 @@ figcaption {
     object-fit: cover;
 }
 
-#content {
+.content {
     display: flex;
-    justify-content: space-between;  
-    align-items: center;         
-    width: 60%;                      
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;          
+    max-width: 60%;  
+    gap: 20px;                    
 }
 
-#content > * {
+.content > * {
     flex: 1;                        
     margin: 0 10px;                
 }
 
 .text-image-pair {
-  display: flex;
-  align-items: center;
-  gap: 30px; 
-  margin-top: 2em;
-  margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; 
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
-#navbar {
+.navbar {
     background: var(--navbar-color);
     padding: 20px;
     color: white;
@@ -130,23 +149,23 @@ figcaption {
     align-items: center;
 }
 
-#navbar h1 {
+.navbar h1 {
     margin: 0;
     font-size: 24px;
 }
 
-#navbar p {
+.navbar p {
     margin: 0;
     font-size: 18px;
 }
 
-#navbar a {
+.navbar a {
   color: inherit;
   margin: 0 10px;
   text-decoration: none;
 }
 
-#navbar a:hover {
+.navbar a:hover {
   text-decoration: underline;
   color: var(--text-color-2)
 }
@@ -161,24 +180,30 @@ figcaption {
   color: var(--text-color-2)
 }
 
+.projects-page {
+    margin-top: 10px;
+}
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 30px;
     padding: 20px;
-    max-width: 800px;
+    max-width: 80%;
     margin: auto;
 }
 
 .project-card {
     background: var(--card-bg);
     padding: 15px;
-    border-radius: var(--border-radius);
     text-decoration: none;
     color: var(--text-color);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+}
+
+.project-subtitle {
+    color: var(--text-color-3);
 }
 
 .project-card img {
@@ -189,3 +214,51 @@ figcaption {
 .project-card:hover {
     transform: scale(1.05);
 }
+
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    background-color: var(--background-color); /* Optional */
+}
+
+.icon-button {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.project-title h1 {
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin: 0;
+}
+
+iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.play-now{
+    background-color: var(--button-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--background-color);
+    padding: 20px 40px 20px 40px;
+    margin-top: 20px;
+    border-radius: 40px;
+}
+
+.play-now:hover {
+    background-color: var(--button-color-highlight);
+}
+
