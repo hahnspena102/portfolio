@@ -18,6 +18,15 @@
           .then((response) => response.text())
           .then((data) => {
             document.getElementById(elementId).innerHTML = data;
+            if(elementId === 'header'){
+              const navbar = document.querySelector('.navbar');
+              const spacer = document.querySelector('.navbar-spacer');
+              if(navbar && spacer){
+                const navbarHeight = navbar.offsetHeight;
+                spacer.style.height = `${navbarHeight}px`;
+                document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
+              }
+            }
           })
           .catch((error) => {
             console.error('Error loading the HTML file:', error);
@@ -34,41 +43,43 @@
 
   <body>
     <div id="header"></div>
-    <div class="intro">
-        <div class="content">
-            <div class="text-image-pair">
-              <div>
-                <h1>Hahns Peña</h1>
-                <p>Hello! My name is Hahns Peña, and I use he/him pronouns. I'm currently a fourth-year student at Cal Poly SLO, majoring in Computer Science with a minor in Computing for Interactive Arts.</p>
-                <p>I was born in the Philippines, and I moved to the San Fernando Valley when I was six. As an immigrant, I faced many challenges that required me to make connections and build a community in an environment I wasn't familiar with. Therefore, I strive to help create a sense of belonging both through my projects and my leadership roles.</p>
-              </div>
-              <img id="portrait-img" src="../assets/images/portrait.png" alt="Portrait"/>
-            </div> 
+    <section id="intro" class="section section-1">
+      <div class="intro-container">
+        <div class="intro-text">
+          <h1>Hello, I'm Hahns! 👋</h1>
+          <p>
+            he/him | Fourth-year Student at Cal Poly SLO | Computer Science Major | Computing for Interactive Arts Minor</p>
+          </p>
         </div>
-    </div>
-    <div class="about-me">
-        <div class="content">
-            <div>
-              <h1>About Me</h1>
-              <p>For two years, I served on Cal Poly’s Pilipino Cultural Exchange’s board, where I took on the roles of Outreach Coordinator and Club Liaison. I organize large-scale cultural events with a focus on inclusion and collaboration. Furthermore, I coordinated with local organizations and campus clubs to strengthen outreach.</p>
-              <div class="text-image-pair">
-                <div>
-                  <img id="about-me-img" src="../assets/images/805collab.jpg" alt="805 Collab"/>
-                  <figcaption>PCE @ 805 Collab '24</figcaption>
-                </div>
-                <div>
-                  <img id="about-me-img" src="../assets/images/wow.png" alt="Week of Welcome"/>
-                  <figcaption>Week of Welcome '23</figcaption>
-                </div>
-              </div>
-              
-               <p>I also served as a Week of Welcome leader and worked together in a team of two. Guiding a group of 25 new students through orientation, providing information and mentorship, and leading conversations on key topics like bystander intervention, consent, diversity, and inclusion helped me become a better leader.</p>
-               <p>My passion is creation! Some of my hobbies include drawing, writing, singing, cooking, coding, and overall anything creative. I strive to create projects that uplift my community, showcase new ideas, entertain, and show myself off as a person. I started drawing when I was in middle school, and ever since then, I have been obsessed with the impact I could have from the things I created. I especially enjoy large projects that require teamwork, innovation, and perseverance. From video game development to songwriting, I hope that my projects provide engaging experiences to everyone!</p>
-            </div>
-            
+        <div class="intro-image">
+          <img src="assets/images/headshot.jpg" alt="Photo of Hahns">
         </div>
-    </div>
-    
+      </div>
+    </section>
+
+    <section id="about" class="section section-2">
+      <h2>About Me</h2>
+      <p>My passion is creation! Some of my hobbies include drawing, writing, singing, cooking, coding, and overall anything creative. I strive to create projects that uplift my community, showcase new ideas, entertain, and show myself off as a person. I started drawing when I was in middle school, and ever since then, I have been obsessed with the impact I could have from the things I created. I especially enjoy large projects that require teamwork, innovation, and perseverance. From video game development to songwriting, I hope that my projects provide engaging experiences to everyone!</p>
+    </section>
+
+    <section id="roles" class="section section-1">
+      <h2>Roles</h2>
+        <p>For two years, I served on Cal Poly’s Pilipino Cultural Exchange’s board, where I took on the roles of Outreach Coordinator and Club Liaison. I organize large-scale cultural events with a focus on inclusion and collaboration. Furthermore, I coordinated with local organizations and campus clubs to strengthen outreach.</p>
+        <div class="horizontal">
+          <div class="event-card">
+            <img id="about-me-img" src="../assets/images/805collab.jpg" alt="805 Collab"/>
+            <figcaption>PCE @ 805 Collab '24</figcaption>
+          </div>
+          <div class="event-card">
+            <img id="about-me-img" src="../assets/images/wow.png" alt="WOW '24"/>
+            <figcaption>Week of Welcome '24</figcaption>
+          </div>
+        </div>
+        <p>I also served as a Week of Welcome leader and worked together in a team of two. Guiding a group of 25 new students through orientation, providing information and mentorship, and leading conversations on key topics like bystander intervention, consent, diversity, and inclusion helped me become a better leader.</p>
+        
+
+      </section>      
+ 
     <div id="footer"></div>
   </body>
 </html>

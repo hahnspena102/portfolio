@@ -18,6 +18,15 @@
           .then((response) => response.text())
           .then((data) => {
             document.getElementById(elementId).innerHTML = data;
+            if(elementId === 'header'){
+              const navbar = document.querySelector('.navbar');
+              const spacer = document.querySelector('.navbar-spacer');
+              if(navbar && spacer){
+                const navbarHeight = navbar.offsetHeight;
+                spacer.style.height = `${navbarHeight}px`;
+                document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
+              }
+            }
           })
           .catch((error) => {
             console.error('Error loading the HTML file:', error);
@@ -34,27 +43,23 @@
 
   <body>
     <div id="header"></div>
-    <div class="projects-page">
-      <h1 style="text-align: center">Projects</h1>
+    <section id="projects" class="section section-1">
+      <h1>Projects</h1>
 
       <div class="projects-grid">
         <a href="projects/breadquest2.html" class="project-card">
           <img src="../assets/images/breadquest2.jpeg" alt="BreadQuest2" />
           <h3>BreadQuest II</h3>
-          <div class="project-subtitle">Web-based top-down dungeon crawler video game.</div>
+          <div class="project-subtitle">Web-based top-down dungeon crawler video game with a dessert/baking themes.</div>
         </a>
         <a href="projects/songsmith.html" class="project-card">
           <img src="../assets/images/songsmith-icon.png" alt="Songsmith" />
           <h3>Songsmith</h3>
           <div class="project-subtitle">Social media platform for music lovers to create, review, and share playlists.</div>
         </a>
-        <a href="projects/project2.html" class="project-card">
-          <img src="../assets/images/lumi.png" alt="Lumi" />
-          <h2>Lumi</h2>
-          <div class="project-subtitle">Prototype designed at CampPolyHacks 2023 to foster inclusivity and emotional support.</div>
-        </a>
+        
       </div>
-    </div>
+    </section>    
 
     <div id="footer"></div>
   </body>

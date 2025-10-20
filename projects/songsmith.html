@@ -18,6 +18,15 @@
             .then((response) => response.text())
             .then((data) => {
                 document.getElementById(elementId).innerHTML = data;
+                if(elementId === 'header'){
+                const navbar = document.querySelector('.navbar');
+                const spacer = document.querySelector('.navbar-spacer');
+                if(navbar && spacer){
+                    const navbarHeight = navbar.offsetHeight;
+                    spacer.style.height = `${navbarHeight}px`;
+                    document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
+                }
+                }
             })
             .catch((error) => {
                 console.error('Error loading the HTML file:', error);
@@ -33,138 +42,113 @@
     </head>
     <body>
         <div id="header"></div>
-        <div class="project-header">
-            <a href="../projects.html" class="icon-button" title="Back to Projects">
-                <span class="material-icons">arrow_back</span>
-            </a>
-            <div>
-                <h1 style="text-align: center">Songsmith</h1>
+        <section id="songsmith-intro" class="section section-1">
+            <h1 style="text-align: center">Songsmith</h1> 
+            <img src="../assets/images/songsmith-icon.png" width=300rem alt="Songsmith" />
+            <p>Songsmith is a social media platform for music lovers to create, review, and share playlists.</p>
+            <a href="https://github.com/ArjunR27/Songsmith" class="play-now">GitHub</a>
+        </section>
+        <section id="songsmith-details-1" class="section section-2">
+            <h2>Key Features</h2>
+            <p>Unlike traditional music platforms, Songsmith encourages community interaction through likes, dislikes, and threaded comments on playlists. 
+            It's built for music curators who want to express their taste and discover new sounds through shared experiences.</p>
+            <img src="../assets/images/songsmith-screenshot.png" width=800rem alt="Songsmith" />
+            <div class="horizontal" style="text-align: center;">
+                <p>Create and share playlists in interactive threads!</p>
+                <p>Comment, like, and dislike playlists for collaborative music discovery!</p>
+                <p>Personalized user feeds driven by social engagement!</p>
             </div>
-        </div>
-        <div class="project-intro">
-            <div class="content">
-                <p>Songsmith is a social media platform for music lovers to create, review, and share playlists.</p>
-                
-                <a href="https://github.com/ArjunR27/Songsmith" class="play-now">GitHub</a>
+        </section>
+        <section id="songsmith-details-2" class="section section-1">
+            <h2>Technical Contributions</h2>
+            <div class="contribution">
+                <h3>Full-Stack Development</h3>
+                <p>
+                Built using the <strong>MERN stack</strong> (MongoDB, Express, React, Node.js) to deliver a responsive,
+                scalable web application that efficiently handled both frontend and backend logic.
+                </p>
             </div>
-        </div>
-        <div class="project-details-1">
-            <div class="content">
-                <h2>Key Features</h2>
-                <div class="text-image-pair">
-                    <p>Unlike traditional music platforms, Songsmith encourages community interaction through likes, dislikes, and threaded comments on playlists. 
-                    It's built for music curators who want to express their taste and discover new sounds through shared experiences.</p>
-                    <img src="../assets/images/songsmith-icon.png" width=300rem alt="Songsmith" />
+            <div class="contribution">
+                <h3>Project Management</h3>
+                <p>
+                Organized the development process through clear technical documentation, user stories, sprint planning,
+                and quality assurance workflows to maintain focus and clarity throughout the project lifecycle.
+                </p>
+            </div>
+            <div class="contribution">
+                <h3>Team Collaboration</h3>
+                <p>
+                Collaborated within a team of four using <strong>Agile practices</strong>, including pair programming, 
+                regular code reviews, and sprint-based task tracking to ensure alignment and accountability.
+                </p>
+            </div>
+            <div class="contribution">
+                <h3>Frontend-Backend Integration</h3>
+                <p>Oversaw smooth communication between <strong>React components</strong> and <strong>RESTful API</strong> endpoints, ensuring data consistency and fast interactions.</p>
                 </div>
-                <div class="text-image-pair">
-                    <p>Create and share playlists in interactive threads!</p>
-                    <p>Comment, like, and dislike playlists for collaborative music discovery!</p>
-                    <p>Personalized user feeds driven by social engagement!</p></div>
-                
-
-                
             </div>
-        </div>
-        <div class="project-details-2">
-            <div class="content">
-                <h2>Technical Contributions</h2>
+        </section>
+            <section id="songsmith-details-3" class="section section-2">
+            <h2>What We Learned</h2>
+            <div class="learned-grid">
                 <div class="contribution">
-                    <h3>Full-Stack Development</h3>
+                    <h3>Version Control & Collaboration</h3>
                     <p>
-                    Built using the <strong>MERN stack</strong> (MongoDB, Express, React, Node.js) to deliver a responsive,
-                    scalable web application that efficiently handled both frontend and backend logic.
+                    Used Git effectively for version tracking, branching, and merging, which enabled smooth collaboration in a team of four.
+                    Practiced Agile development methods such as sprint planning, task division, and regular code reviews to maintain team alignment.
                     </p>
                 </div>
 
                 <div class="contribution">
-                    <h3>Project Management</h3>
+                    <h3>Frontend Development</h3>
                     <p>
-                    Organized the development process through clear technical documentation, user stories, sprint planning,
-                    and quality assurance workflows to maintain focus and clarity throughout the project lifecycle.
+                    Built responsive user interfaces using React, HTML, and CSS, with a strong emphasis on component-based design and effective state management.
+                    Integrated frontend components with backend APIs to support real-time updates and dynamic content rendering.
                     </p>
                 </div>
 
                 <div class="contribution">
-                    <h3>Team Collaboration</h3>
+                    <h3>Backend Development</h3>
                     <p>
-                    Collaborated within a team of four using <strong>Agile practices</strong>, including pair programming, 
-                    regular code reviews, and sprint-based task tracking to ensure alignment and accountability.
+                    Designed and implemented backend functionality using Node.js and Express. 
+                    Structured MongoDB schemas efficiently and applied relational data modeling principles within a NoSQL context.
                     </p>
                 </div>
 
                 <div class="contribution">
-                    <h3>Frontend-Backend Integration</h3>
-                    <p>Oversaw smooth communication between <strong>React components</strong> and <strong>RESTful API</strong> endpoints, ensuring data consistency and fast interactions.</p>
+                    <h3>System Integration</h3>
+                    <p>
+                    Managed communication between frontend and backend through RESTful APIs, ensuring consistent data flow and logical coherence.
+                    Implemented full-stack features including data persistence, user interactions, and playlist review functionality.
+                    </p>
+                </div>
 
-                    </div>
+                <div class="contribution">
+                    <h3>Deployment & DevOps</h3>
+                    <p>
+                    Gained hands-on experience with cloud deployment tools and practices to prepare the full stack application for production and testing in hosted environments.
+                    </p>
+                </div>
+
+                <div class="contribution">
+                    <h3>Teamwork & Time Management</h3>
+                    <p>
+                    Learned to break down complex features into smaller, manageable tasks and distribute them effectively across the team.
+                    Balanced individual contributions with team objectives through clear communication and prioritization during Agile sprints.
+                    </p>
                 </div>
             </div>
-        <div class="project-details-1">
-            <div class="content">
-                <h2>What We Learned</h2>
-                <div class="learned-grid">
-                    <div class="contribution">
-                        <h3>Version Control & Collaboration</h3>
-                        <p>
-                        Used Git effectively for version tracking, branching, and merging, which enabled smooth collaboration in a team of four.
-                        Practiced Agile development methods such as sprint planning, task division, and regular code reviews to maintain team alignment.
-                        </p>
-                    </div>
-
-                    <div class="contribution">
-                        <h3>Frontend Development</h3>
-                        <p>
-                        Built responsive user interfaces using React, HTML, and CSS, with a strong emphasis on component-based design and effective state management.
-                        Integrated frontend components with backend APIs to support real-time updates and dynamic content rendering.
-                        </p>
-                    </div>
-
-                    <div class="contribution">
-                        <h3>Backend Development</h3>
-                        <p>
-                        Designed and implemented backend functionality using Node.js and Express. 
-                        Structured MongoDB schemas efficiently and applied relational data modeling principles within a NoSQL context.
-                        </p>
-                    </div>
-
-                    <div class="contribution">
-                        <h3>System Integration</h3>
-                        <p>
-                        Managed communication between frontend and backend through RESTful APIs, ensuring consistent data flow and logical coherence.
-                        Implemented full-stack features including data persistence, user interactions, and playlist review functionality.
-                        </p>
-                    </div>
-
-                    <div class="contribution">
-                        <h3>Deployment & DevOps</h3>
-                        <p>
-                        Gained hands-on experience with cloud deployment tools and practices to prepare the full stack application for production and testing in hosted environments.
-                        </p>
-                    </div>
-
-                    <div class="contribution">
-                        <h3>Teamwork & Time Management</h3>
-                        <p>
-                        Learned to break down complex features into smaller, manageable tasks and distribute them effectively across the team.
-                        Balanced individual contributions with team objectives through clear communication and prioritization during Agile sprints.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="project-details-2">
-            <div class="content">
-                <h2>Tools</h2>
-                <p><b>MERN Stack</b>  (MongoDB, Express, React, Node.js) - allowed for seamless full-stack development and a responsive, scalable web app.
-                <p><b>Git & GitHub</b> - version control and collaboration. Enabled smooth team workflow with branch management, pull requests, and issue tracking.</p>
-                <p><b>Figma</b> - frontend brainstorming, design, and planning</p>
-            </div>
-        </div>
-        <div class="project-details-1">
-            <div class="content">
-                <p>This project was developed in collaboration with Arjun Ranade, Ishwarya Namburu, and Poornima Godavarthy for CSC307 - Intro to Software Engineering</p>
-            </div>
-        </div>
+        </section>
+        <section id="songsmith-details-3" class="section section-1">
+            <h2>Tools</h2>
+            <p><b>MERN Stack</b>  (MongoDB, Express, React, Node.js) - allowed for seamless full-stack development and a responsive, scalable web app.
+            <p><b>Git & GitHub</b> - version control and collaboration. Enabled smooth team workflow with branch management, pull requests, and issue tracking.</p>
+            <p><b>Figma</b> - frontend brainstorming, design, and planning</p>
+        </section>
+        <section id="songsmith-details-4" class="section section-2">
+            <p>This project was developed in collaboration with Arjun Ranade, Ishwarya Namburu, and Poornima Godavarthy for CSC307 - Intro to Software Engineering</p>
+        </section>
+    
         <div id="footer"></div>
 
 
